@@ -5,31 +5,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/article_heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
-        android:padding="@dimen/padding_regular"
-        android:text="@string/article_title"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/article_heading">
+        android:padding="@dimen/extra_eadding">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation = "vertical">
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/article_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/design_default_color_primary"
+                android:padding="@dimen/padding_regular"
+                android:text="@string/article_title"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/article_subheading"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/subHeading_width"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/article_heading"
                 android:padding="@dimen/padding_regular"
                 android:text="@string/article_subtitle"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
@@ -38,7 +40,8 @@
                 android:id="@+id/article"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/article_subheading"
+                android:layout_below="@+id/article_heading"
+                android:layout_toRightOf="@id/article_subheading"
                 android:autoLink="web"
                 android:gravity="left"
                 android:lineSpacingExtra="@dimen/line_spacing"
@@ -50,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/article"
                 android:layout_margin="8dp"
+                android:layout_toRightOf="@id/article_subheading"
                 android:text="@string/add_comments" />
         </RelativeLayout>
 
